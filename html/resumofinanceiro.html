@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Resumo Financeiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/resumofinanceiro.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"  >Nexus</div>
+        <div class="user-profile">
+            <div class="avatar">US</div>
+            <span>Olá, <strong>Usuário</strong></span>
+            <i class="fas fa-caret-down"></i>
+        </div>
+    </header>
+
+    <aside>
+        <div class="sidebar-section">
+            <div class="section-title">Principal</div>
+            <a href="./resumofinanceiro.html" class="nav-item active">
+                <i class="fas fa-chart-pie"></i> Resumo Financeiro
+            </a>
+            <a href="./recebimentos.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Recebimentos
+            </a>
+            <a href="./despesas.html" class="nav-item">
+                <i class="fas fa-money-bill-wave"></i> Despesas
+            </a>
+            <a href="./investimentos.html" class="nav-item">
+                <i class="fas fa-piggy-bank"></i> Investimentos
+            </a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-title">Conta</div>
+            <a href="./cadastro.html" class="nav-item">
+                <i class="fas fa-id-card"></i> Cadastro
+            </a>
+            <a href="./opcoes.html" class="nav-item">
+                <i class="fas fa-sliders-h"></i> Ajustes
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Resumo Financeiro</h1>
+            <button class="btn-primary" onclick="openModal()">
+                <i class="fas fa-plus"></i> Novo Lançamento
+            </button>
+        </div>
+
+        <div class="dashboard-cards">
+            <div class="card">
+                <div class="card-label"><i class="fas fa-arrow-down text-green"></i> Receitas</div>
+                <div class="card-value text-green" id="total-income">R$ 0,00</div>
+            </div>
+            <div class="card">
+                <div class="card-label"><i class="fas fa-arrow-up text-red"></i> Despesas</div>
+                <div class="card-value text-red" id="total-expense">R$ 0,00</div>
+            </div>
+            <div class="card">
+                <div class="card-label"><i class="fas fa-chart-line text-blue"></i> Investimentos</div>
+                <div class="card-value text-blue" id="total-invest">R$ 0,00</div>
+            </div>
+            <div class="card">
+                <div class="card-label"><i class="fas fa-wallet"></i> Saldo Atual</div>
+                <div class="card-value" id="total-balance">R$ 0,00</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Últimos Lançamentos</h3>
+                    <select class="month-selector" onchange="filterDate(this.value)">
+                        <option value="all">Todos os meses</option>
+                        <option value="2025-11">Novembro 2025</option>
+                        <option value="2025-12">Dezembro 2025</option>
+                        <option value="2026-01" selected>Janeiro 2026</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Tipo</th>
+                            <th>Data</th>
+                            <th>Valor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title">Distribuição Financeira</h3>
+                <div class="chart-wrapper">
+                    <canvas id="financeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 20px; color: var(--primary-blue);">Novo Lançamento</h2>
+            <form onsubmit="addTransaction(event)">
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <input type="text" id="desc" required placeholder="Ex: Salário, Mercado...">
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select id="type" required>
+                        <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
+                        <option value="investimento">Investimento</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <input type="text" id="cat" required placeholder="Ex: Moradia, FIIs...">
+                </div>
+                <div class="form-group">
+                    <label>Valor (R$)</label>
+                    <input type="number" id="amount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Data</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Javascript/resumofinanceiro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Despesas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark fixed-top shadow-sm">
+        <div class="container-fluid">
+            <button class="btn btn-outline-light d-md-none me-2 border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarMenu">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+
+            <a class="navbar-brand fw-bold" href="../index.html">
+                Nexus
+            </a>
+
+            <div class="ms-auto d-flex align-items-center">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar me-2">US</div> <span class="d-none d-lg-inline small me-1">Olá,
+                            <strong>Usuário</strong></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item small" href="./cadastro.html"><i
+                                    class="fa-solid fa-user me-2"></i>Meu Perfil</a>
+                        </li>
+                        <li><a class="dropdown-item small" href="./opcoes.html"><i
+                                    class="fa-solid fa-gear me-2"></i>Configurações</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item small text-danger" href="#"><i
+                                    class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid main-wrapper">
+        <div class="row h-100">
+            <div class="sidebar col-md-3 col-lg-2 p-0 bg-white offcanvas-md offcanvas-start shadow-sm" id="sidebarMenu">
+                <div class="offcanvas-header bg-light border-bottom">
+                    <h5 class="offcanvas-title text-primary fw-bold">Menu </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-block pt-3">
+                    <div class="list-group list-group-flush">
+                        <small class="text-uppercase text-muted fw-bold px-3 mb-2"
+                            style="font-size: 0.75rem;">Principal</small>
+
+                        <a href="./resumofinanceiro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-chart-pie me-2 text-secondary"></i> Resumo Financeiro
+                        </a>
+
+                        <a href="./recebimentos.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-arrow-trend-up me-2"></i> Recebimentos
+                        </a>
+
+                        <a href="./despesas.html" class="list-group-item list-group-item-action active py-3">
+                            <i class="fa-solid fa-arrow-trend-down me-2 text-secondary"></i> Despesas
+                        </a>
+
+                        <a href="investimentos.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-piggy-bank me-2 text-secondary"></i> Investimentos
+                        </a>
+
+                        <div class="my-2 border-top"></div> <small
+                            class="text-uppercase text-muted fw-bold px-3 mb-2 mt-2"
+                            style="font-size: 0.75rem;">Conta</small>
+                        <a href="./cadastro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-address-card me-2 text-secondary"></i> Cadastro
+                        </a>
+                        <a href="./opcoes.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-sliders me-2 text-secondary"></i> Ajustes
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 py-4 content-area d-flex flex-column min-vh-100">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-4 border-bottom">
+                    <h1 class="h2 text-primary fw-bold">Despesas</h1>
+                    <button type="button" class="btn btn-secondary shadow-sm" data-bs-toggle="modal"
+                        data-bs-target="#modaldespesa">
+                        <i class="fa-solid fa-plus me-2"></i>Nova Despesa
+                    </button>
+                </div>
+                <div class="row g-4 mb-5 align-items-stretch">
+                    <div class="col-12 col-lg-5 col-xl-4">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4 d-flex align-items-center">
+                                <div class="card-icon-bg me-3"
+                                    style="background-color: rgba(227, 17, 17, 0.15); color: #f50404;">
+                                    <i class="fa-solid fa-wallet fa-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="text-muted small text-uppercase fw-bold">Saída (Mês)</span>
+                                    <h3 class="mb-0 fw-bold text-danger"> - R$ 1.590,00</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7 col-xl-8">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4 d-flex flex-column justify-content-center">
+                                <span class="text-muted small text-uppercase fw-bold mb-2">Pesquisar por Despesa</span>
+                                <form class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0">
+                                                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control bg-light border-0"
+                                                id="buscaDescricao" placeholder="Buscar por descrição...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-0">
+                                                <i class="fa-solid fa-calendar-days text-muted"></i>
+                                            <input type="date" class="form-control bg-light border-0" id="buscaData">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-grid">
+                                        <button type="button" class="btn btn-outline-primary fw-bold">
+                                            Filtrar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-sm rounded-4 mb-5">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 text-muted">Últimas Retiradas</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle  arrounded-3 mb-2">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="ps-4">Descrição</th>
+                                        <th>Categoria</th>
+                                        <th>Fonte</th>
+                                        <th>Data</th>
+                                        <th class="text-end pe-4">Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">Aluguel</td>
+                                        <td><span class="badge bg-primary bg-opacity-10 text-primary">Moradia</span>
+                                        </td>
+                                        <td>Itaú</td>
+                                        <td>05/11/2025</td>
+                                        <td class="text-end pe-4 fw-bold text-danger">- R$ 1.500,00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">Cinema</td>
+                                        <td><span
+                                                class="badge bg-warning bg-opacity-10 text-warning text-dark">Entretenimento</span>
+                                        </td>
+                                        <td>Nubank</td>
+                                        <td>28/11/2025</td>
+                                        <td class="text-end pe-4 fw-bold text-danger">- R$ 90,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <footer class="mt-auto pt-4 border-top text-center text-muted small">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-md-start">
+                            <p class="mb-0">&copy; 2025 <strong>Nexus</strong>. Todos os direitos reservados.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item"><a href="./regulamento.html"
+                                        class="text-muted text-decoration-none">Privacidade</a></li>
+                                <li class="list-inline-item mx-2">|</li>
+                                <li class="list-inline-item"><a href="./regulamento.html"
+                                        class="text-muted text-decoration-none">Termos</a></li>
+                                <li class="list-inline-item mx-2">|</li>
+                                <li class="list-inline-item"><a href="#"
+                                        class="text-muted text-decoration-none">Ajuda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <div class="modal fade" id="modaldespesa" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Nova Despesa</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputDescricao" class="form-label text-muted small fw-bold">DESCRIÇÃO</label>
+                            <input type="text" class="form-control" id="inputDescricao" placeholder="Ex: Aluguel..."
+                                required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="inputValor" class="form-label text-muted small fw-bold">VALOR (R$)</label>
+                                <input type="number" class="form-control fw-bold text-success" id="inputValor"
+                                    placeholder="0,00" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="inputData" class="form-label text-muted small fw-bold">DATA</label>
+                                <input type="date" class="form-control" id="inputData" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectCategoria" class="form-label text-muted small fw-bold">CATEGORIA</label>
+                            <select class="form-select" id="selectCategoria">
+                                <option selected>Selecione uma categoria...</option>
+                                <option value="1">Moradia</option>
+                                <option value="2">Entretenimento</option>
+                                <option value="3">Saúde</option>
+                                <option value="4">Alimentação</option>
+                                <option value="5">Transporte</option>
+                                <option value="6">Educação</option>
+                                <option value="7">Outros</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="selectFonte" class="form-label text-muted small fw-bold">CONTA / FONTE</label>
+                            <div class="d-flex gap-2">
+                                <select class="form-select" id="selectFonte">
+                                    <option selected>Selecione a fonte</option>
+                                    <option value="1">Itaú</option>
+                                    <option value="2">Nubank</option>
+                                    <option value="3">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

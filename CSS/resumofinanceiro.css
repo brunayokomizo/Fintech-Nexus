@@ -1,0 +1,330 @@
+:root {
+    /* Paleta de Cores da Fintech */
+    --primary-blue: #143d81; /* Azul Institucional */
+    --active-bg: #e5effd;    /* Item ativo no menu */
+    --text-dark: #334155;
+    --text-light: #64748b;
+    --bg-main: #f1f5f9;      /* Fundo cinza claro */
+    --green: #16a34a;        /* Receitas */
+    --red: #dc2626;          /* Despesas */
+    --blue-btn: #4f86e9;     /* Botões */
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-main);
+    overflow: hidden;
+}
+
+/* --- SIDEBAR (Barra Lateral) --- */
+aside {
+    width: 260px;
+    background-color: var(--white);
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; 
+    z-index: 10;
+}
+
+.sidebar-section {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.nav-item i {
+    width: 24px;
+    margin-right: 10px;
+    color: var(--text-light);
+}
+
+.nav-item:hover {
+    background-color: #f8fafc;
+}
+
+.nav-item.active {
+    background-color: var(--active-bg);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.nav-item.active i {
+    color: var(--primary-blue);
+}
+
+/* --- HEADER (Topo) --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: white;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+main {
+    flex: 1;
+    margin-top: 60px;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    color: #2b6cb0;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: var(--blue-btn);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* CARDS E GRIDS */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+.text-blue { color: var(--primary-blue); }
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* GRÁFICO */
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-title {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* TABELA */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.table-header {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month-selector {
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: var(--text-dark);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background-color: #f8fafc;
+    font-weight: 700;
+}
+
+td {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: var(--text-dark);
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.badge-receita { background-color: #dcfce7; color: #15803d; }
+.badge-despesa { background-color: #fee2e2; color: #b91c1c; }
+.badge-invest { background-color: #fff7ed; color: #c2410c; }
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+}
+.action-btn:hover { color: var(--red); }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+}
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%; padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+.btn-cancel {
+    background: #e2e8f0;
+    color: var(--text-dark);
+    border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;
+}

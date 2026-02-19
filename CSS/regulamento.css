@@ -1,0 +1,147 @@
+/* --- Variáveis de Cores (Identidade Visual Nexus) --- */
+:root {
+    --primary-blue: #2563eb;       /* Azul Institucional */
+    --dark-blue: #1e40af;          /* Azul Escuro para Títulos */
+    --bg-color: #f3f4f6;           /* Fundo da página (Cinza claro) */
+    --card-bg: #ffffff;            /* Fundo do papel/card */
+    --text-main: #374151;          /* Texto principal */
+    --text-muted: #6b7280;         /* Texto secundário */
+    --border-color: #e5e7eb;       /* Bordas sutis */
+    --alert-bg: #eff6ff;           /* Fundo dos alertas */
+    --alert-border: #bfdbfe;       /* Borda dos alertas */
+}
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Principal --- */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 800px; /* Largura ideal para leitura */
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Cabeçalho --- */
+.term-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.term-header h1 {
+    color: var(--dark-blue);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.term-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.update-date {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* --- Seções de Texto --- */
+.term-section {
+    margin-bottom: 30px;
+}
+
+.term-section h2 {
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.term-section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Listas --- */
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* --- Caixas de Alerta/Destaque --- */
+.alert-box {
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+
+.alert-box.warning {
+    background-color: #fff7ed; /* Laranja bem claro */
+    border-left: 4px solid #f97316;
+    color: #9a3412;
+}
+
+.alert-box.info {
+    background-color: var(--alert-bg); /* Azul bem claro */
+    border-left: 4px solid var(--primary-blue);
+    color: var(--dark-blue);
+}
+
+/* --- Rodapé --- */
+.term-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 25px;
+    }
+
+    .term-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .term-section h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Investimentos </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark fixed-top shadow-sm">
+        <div class="container-fluid">
+            <button class="btn btn-outline-light d-md-none me-2 border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarMenu">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+
+            <a class="navbar-brand fw-bold" href="../index.html">
+                Nexus
+            </a>
+
+            <div class="ms-auto d-flex align-items-center">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar me-2">US</div> <span class="d-none d-lg-inline small me-1">Olá,
+                            <strong>Usuário</strong></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item small" href="./cadastro.html"><i
+                                    class="fa-solid fa-user me-2"></i>Meu Perfil</a>
+                        </li>
+                        <li><a class="dropdown-item small" href="./opcoes.html"><i
+                                    class="fa-solid fa-gear me-2"></i>Configurações</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item small text-danger" href="#"><i
+                                    class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid main-wrapper">
+        <div class="row h-100">
+            <div class="sidebar col-md-3 col-lg-2 p-0 bg-white offcanvas-md offcanvas-start shadow-sm" id="sidebarMenu">
+                <div class="offcanvas-header bg-light border-bottom">
+                    <h5 class="offcanvas-title text-primary fw-bold">Menu </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-block pt-3">
+                    <div class="list-group list-group-flush">
+                        <small class="text-uppercase text-muted fw-bold px-3 mb-2"
+                            style="font-size: 0.75rem;">Principal</small>
+
+                        <a href="./resumofinanceiro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-chart-pie me-2 text-secondary"></i> Resumo Financeiro
+                        </a>
+
+                        <a href="./recebimentos.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-arrow-trend-up me-2"></i> Recebimentos
+                        </a>
+
+                        <a href="./despesas.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-arrow-trend-down me-2 text-secondary"></i> Despesas
+                        </a>
+
+                        <a href="./investimentos.html" class="list-group-item list-group-item-action active py-3">
+                            <i class="fa-solid fa-piggy-bank me-2 text-secondary"></i> Investimentos
+                        </a>
+
+                        <div class="my-2 border-top"></div> <small
+                            class="text-uppercase text-muted fw-bold px-3 mb-2 mt-2"
+                            style="font-size: 0.75rem;">Conta</small>
+                        <a href="./cadastro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-address-card me-2 text-secondary"></i> Cadastro
+                        </a>
+                        <a href="./opcoes.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-sliders me-2 text-secondary"></i> Ajustes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-content-wrapper"
+                class="col-md-9 ms-sm-auto col-lg-10 px-md-5 py-4 content-area d-flex flex-column min-vh-100">
+                <nav class="navbar navbar-light bg-transparent py-3 px-3 border-bottom">
+                    <div class="d-flex justify-content-between w-100 align-items-center">
+                        <h2 class="fs-4 fw-bold text-dark mb-0">Carteira de Investimentos</h2>
+                        <span
+                            class="badge bg-success bg-opacity-10 text-success border border-success px-3 py-2 rounded-pill">
+                            <i class="bi bi-check-circle-fill me-1"></i> Conectado B3
+                        </span>
+                    </div>
+                </nav>
+
+                <div class="container-fluid px-4">
+                    <div class="row g-3 my-2">
+                        <div class="col-md-4">
+                            <div
+                                class="card p-3 shadow-sm border-0 d-flex flex-row align-items-center justify-content-between h-100">
+                                <div>
+                                    <h6 class="text-muted mb-1 text-uppercase small fw-bold">Patrimônio Total</h6>
+                                    <h3 class="fw-bold text-primary mb-0" id="total-patrimonio">R$ 0,00</h3>
+                                </div>
+                                <div class="icon-shape bg-primary bg-opacity-10 text-primary rounded-3 p-3">
+                                    <i class="bi bi-safe fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div
+                                class="card p-3 shadow-sm border-0 d-flex flex-row align-items-center justify-content-between h-100">
+                                <div>
+                                    <h6 class="text-muted mb-1 text-uppercase small fw-bold">Renda Variável</h6>
+                                    <h3 class="fw-bold text-success mb-0" id="total-variavel">R$ 0,00</h3>
+                                </div>
+                                <div class="icon-shape bg-success bg-opacity-10 text-success rounded-3 p-3">
+                                    <i class="bi bi-graph-up fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div
+                                class="card p-3 shadow-sm border-0 d-flex flex-row align-items-center justify-content-between h-100">
+                                <div>
+                                    <h6 class="text-muted mb-1 text-uppercase small fw-bold">Renda Fixa</h6>
+                                    <h3 class="fw-bold text-info mb-0" id="total-fixa">R$ 0,00</h3>
+                                </div>
+                                <div class="icon-shape bg-info bg-opacity-10 text-info rounded-3 p-3">
+                                    <i class="bi bi-bank fs-4"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row my-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-bold">Meus Ativos</h4>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalNovoInvestimento">
+                                <i class="bi bi-plus-lg me-1"></i> Novo Aporte
+                            </button>
+                        </div>
+
+                        <div class="col">
+                            <div class="card shadow-sm border-0 rounded-3">
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <thead class="bg-light text-muted small text-uppercase">
+                                                <tr>
+                                                    <th scope="col" class="ps-4 py-3">Ativo</th>
+                                                    <th scope="col" class="py-3">Tipo</th>
+                                                    <th scope="col" class="py-3">Quantidade</th>
+                                                    <th scope="col" class="py-3">Preço Médio</th>
+                                                    <th scope="col" class="py-3">Total Investido</th>
+                                                    <th scope="col" class="pe-4 py-3 text-end">Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tabela-investimentos">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="modal fade" id="modalNovoInvestimento" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold">Registrar Aporte</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="formInvestimento">
+                            <div class="mb-3">
+                                <label class="form-label small text-muted fw-bold">TIPO DE ATIVO</label>
+                                <select class="form-select" id="tipoAtivo" required>
+                                    <option value="Ação">Ação (B3)</option>
+                                    <option value="FII">Fundo Imobiliário (FII)</option>
+                                    <option value="Renda Fixa">Renda Fixa / Tesouro</option>
+                                    <option value="Cripto">Criptomoeda</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small text-muted fw-bold">CÓDIGO (TICKER)</label>
+                                <input type="text" class="form-control" id="ticker" placeholder="Ex: PETR4, HGLG11"
+                                    required style="text-transform: uppercase;">
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label class="form-label small text-muted fw-bold">QUANTIDADE</label>
+                                    <input type="number" class="form-control" id="quantidade" placeholder="0" required>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label small text-muted fw-bold">PREÇO (R$)</label>
+                                    <input type="number" class="form-control" id="preco" placeholder="0.00" step="0.01"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="d-grid mt-3">
+                                <button type="submit" class="btn btn-primary py-2 fw-bold">Salvar Investimento</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="investimentos.js"></script>
+    </div>
+</body>
+
+</html>

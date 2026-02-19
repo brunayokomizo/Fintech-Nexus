@@ -1,0 +1,84 @@
+:root {
+    --nexus-blue: #2563eb; /* Azul primário */
+    --nexus-dark: #1e293b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--nexus-blue) 0%, #1e40af 100%);
+    min-height: 100vh;
+    padding-top: 80px; /* Compensar a navbar fixa */
+    position: relative;
+    padding-bottom: 100px;
+}
+
+/* Efeito de onda no fundo do Hero */
+.hero-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Preview do Dashboard (Imagem) */
+.dashboard-preview {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-preview:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+/* Cards de Recursos */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+}
+
+/* Botões */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--nexus-blue);
+    border-color: var(--nexus-blue);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.hover-effect {
+    transition: transform 0.2s;
+}
+.hover-effect:active {
+    transform: scale(0.95);
+}

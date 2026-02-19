@@ -1,0 +1,79 @@
+:root {
+    --nexus-blue: #0d6efd; /* Azul Padrão Bootstrap/Nexus */
+    --nexus-bg: #f5f7fa;   /* Fundo cinza bem claro */
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--nexus-bg);
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px;
+    margin-left: 0;
+    transition: margin 0.25s ease-out;
+    position: fixed;
+    z-index: 1000;
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    margin-left: 250px; /* Mesma largura da sidebar */
+    padding-bottom: 50px;
+}
+
+/* Links da Sidebar */
+.list-group-item {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef !important;
+    color: var(--nexus-blue);
+    transform: translateX(5px);
+}
+
+.list-group-item.active {
+    background-color: var(--nexus-blue) !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 0 25px 25px 0; /* Efeito arredondado na direita */
+}
+
+/* Ajustes de Tabela */
+.table thead th {
+    border-top: none;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.table td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Tags de Tipo de Ativo */
+.badge-acao { background-color: #e7f1ff; color: #0d6efd; }
+.badge-fii { background-color: #d1e7dd; color: #0f5132; }
+.badge-rf { background-color: #e0cffc; color: #6610f2; }
+
+/* Responsividade simples para telas pequenas */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -250px; /* Esconde a sidebar */
+    }
+    #page-content-wrapper {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,117 @@
+/* Reset básico para tirar margens padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* O CONTAINER PAI */
+.login-container {
+    /* 1. Define a imagem de fundo */
+    background-image: url('../images/4323508.jpg');
+    background-size: cover;
+    /* Cobre todo o espaço sem distorcer */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+
+    /* 2. Garante que ocupe 100% da altura da tela visível */
+    height: 100vh;
+    width: 100%;
+
+    /* 3. Mágica do Flexbox para centralizar o filho */
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+}
+
+/* A CAIXA DE LOGIN */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Branco com leve transparência */
+    padding: 40px;
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* Sombra para dar destaque (profundidade) */
+
+    width: 100%;
+    max-width: 400px;
+    /* Não deixa ficar muito largo em telas grandes */
+    text-align: justify;
+}
+
+/* Estilização extra para os inputs (opcional) */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* O CONTAINER (Pai) */
+.form-check {
+    display: flex;       /* Use flex para alinhar lado a lado */
+    align-items: center; /* Centraliza verticalmente o box com o texto */
+    gap: 10px;           /* O espaçamento fica AQUI, no pai */
+    margin-top: 10px;
+    width: 100%;         /* Garante que o container ocupe o espaço */
+}
+
+/* O CHECKBOX (Filho 1) */
+.form-check-input {
+    width: auto;         /* IMPORTANTE: Sobrescreve o 100% dos outros inputs */
+    margin: 0;           /* Remove margens padrão que atrapalham */
+    cursor: pointer;
+}
+
+/* O TEXTO (Filho 2) */
+.form-check-label {
+    cursor: pointer;
+    margin: 0;           /* Garante que não tenha margem empurrando */
+}
+
+/* Container que segura o input e o ícone */
+.input-wrapper {
+    position: relative; /* Necessário para o ícone se posicionar em relação a ele */
+    width: 100%;
+    margin-bottom: 15px; /* Espaço para o botão de entrar não colar */
+}
+
+/* O input ocupa tudo */
+.input-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* Espaço na direita p/ o texto não ficar baixo do ícone */
+    box-sizing: border-box; /* Garante que o padding não estoure o tamanho */
+}
+
+/* O ícone do olho */
+#btn-senha {
+    position: absolute;
+    right: 10px;  /* Cola na direita */
+    top: 50%;     /* Fica no meio da altura */
+    transform: translateY(-50%); /* Centraliza exato verticalmente */
+    cursor: pointer;
+    color: #666; /* Cor cinza suave */
+    font-size: 1.2rem;
+}

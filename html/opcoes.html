@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Ajustes </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark fixed-top shadow-sm">
+        <div class="container-fluid">
+            <button class="btn btn-outline-light d-md-none me-2 border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarMenu">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+
+            <a class="navbar-brand fw-bold" href="#">
+                Nexus
+            </a>
+
+            <div class="ms-auto d-flex align-items-center">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar me-2">US</div> <span class="d-none d-lg-inline small me-1">Olá,
+                            <strong>Usuário</strong></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item small" href="./cadastro.html"><i
+                                    class="fa-solid fa-user me-2"></i>Meu Perfil</a>
+                        </li>
+                        <li><a class="dropdown-item small" href="./opcoes.html"><i
+                                    class="fa-solid fa-gear me-2"></i>Configurações</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item small text-danger" href="#"><i
+                                    class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid main-wrapper">
+        <div class="row h-100">
+            <div class="sidebar col-md-3 col-lg-2 p-0 bg-white offcanvas-md offcanvas-start shadow-sm" id="sidebarMenu">
+                <div class="offcanvas-header bg-light border-bottom">
+                    <h5 class="offcanvas-title text-primary fw-bold">Menu </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-block pt-3">
+                    <div class="list-group list-group-flush">
+                        <small class="text-uppercase text-muted fw-bold px-3 mb-2"
+                            style="font-size: 0.75rem;">Principal</small>
+
+                        <a href="./resumofinanceiro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-chart-pie me-2 text-secondary"></i> Resumo Financeiro
+                        </a>
+
+                        <a href="./recebimentos.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-arrow-trend-up me-2"></i> Recebimentos
+                        </a>
+
+                        <a href="despesas.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-arrow-trend-down me-2 text-secondary"></i> Despesas
+                        </a>
+
+                        <a href="investimentos.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-piggy-bank me-2 text-secondary"></i> Investimentos
+                        </a>
+
+                        <div class="my-2 border-top"></div> <small
+                            class="text-uppercase text-muted fw-bold px-3 mb-2 mt-2"
+                            style="font-size: 0.75rem;">Conta</small>
+                        <a href="./cadastro.html" class="list-group-item list-group-item-action py-3">
+                            <i class="fa-solid fa-address-card me-2 text-secondary"></i> Cadastro
+                        </a>
+                        <a href="./opcoes.html" class="list-group-item list-group-item-action active py-3">
+                            <i class="fa-solid fa-sliders me-2 text-secondary"></i> Ajustes
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 py-4 content-area d-flex flex-column min-vh-100">
+                <div class="container my-2">
+                    <div>
+                        <h1 class="mb-3">Configurações</h1>
+                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <form action="">
+                            <div class="mb-3">
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="notificacoesEmail" checked>
+                                    <label class="form-check-label" for="notificacoesEmail">Notificações por Email</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="notificacoesGastos">
+                                    <label class="form-check-label" for="notificacoesGastos">Notificações por Gastos acima do limite</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="notificacoesSMS" checked>
+                                    <label class="form-check-label" for="notificacoesSMS">Notificações por SMS</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="modeDark">
+                                    <label class="form-check-label" for="modeDark">Modo Escuro</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="identificacaoBiometrica" checked>
+                                    <label class="form-check-label" for="identificacaoBiometrica">Identificação Biométrica</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="openAutoLogin">
+                                    <label class="form-check-label" for="openAutoLogin">Abrir automaticamente</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="emailPromocionais" disabled>
+                                    <label class="form-check-label" for="emailPromocionais">Email Promocionais</label>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="btn-group">
+                        <div class="btnCadastro">
+                            <button type="submit" class="btn btn-outline-primary small mb-4"
+                                onclick="alert('As alterações foram salvas')">Salvar</button>
+                        </div>
+                        <div class="btnCadastro">
+                            <button type="reset" class="btn btn-outline-danger small mb-4"
+                                onclick="alert('Alterações canceladas')">Cancelar</button>
+                        </div>
+                    </div>
+                    </form>
+                    <footer class="mt-auto pt-4 border-top text-center text-muted small">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 text-md-start">
+                                <p class="mb-0">&copy; 2025 <strong>Nexus</strong>. Todos os direitos reservados.
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item"><a href="./regulamento.html"
+                                            class="text-muted text-decoration-none">Privacidade</a></li>
+                                    <li class="list-inline-item mx-2">|</li>
+                                    <li class="list-inline-item"><a href="./regulamento.html"
+                                            class="text-muted text-decoration-none">Termos</a></li>
+                                    <li class="list-inline-item mx-2">|</li>
+                                    <li class="list-inline-item"><a href="#"
+                                            class="text-muted text-decoration-none">Ajuda</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
